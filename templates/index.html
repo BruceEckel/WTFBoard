@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
     <title>WTF Open Spaces Board</title>
+    <link rel="stylesheet" type="text/css" href="static/TableCSSCode.css">
 </head>
 <body>
-
-    <ul id="navigation">
-    {% for item in navigation %}
-        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
-    {% endfor %}
-    </ul>
-
-    <h1>My Webpage</h1>
-    {{ a_variable }}
-
-    {# a comment #}
+    <div style="width:800px;margin-left:30px;">
+    <div class="CSSTableGenerator">
+      <table >
+        <tr>
+          {% for column in range(columns) %}
+            <td>Column {{ column }} </td>
+          {% endfor %}
+        </tr>
+        {% for row in range(rows) %}
+          <tr>
+            {% for column in range(columns) %}
+              <td>Item {{ column }}-{{ row }} </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
 </body>
 </html>
